@@ -1,27 +1,27 @@
-import { IAction } from "../../models/common";
+import { IAction } from '../../models/common';
 
 /****************** CONST ***********************/
-const OPEN_MODAL = "OPEN_MODAL";
-const CLOSE_MODAL = "CLOSE_MODAL";
+const OPEN_MODAL = 'OPEN_MODAL';
+const CLOSE_MODAL = 'CLOSE_MODAL';
 
 /**************** Actions ***********************/
 export function openModal(payload: IModalState) {
-    return {
-        type: OPEN_MODAL,
-        payload
-    };
+  return {
+    type: OPEN_MODAL,
+    payload,
+  };
 }
 
 export function closeModal() {
-    return {
-        type: CLOSE_MODAL
-    };
+  return {
+    type: CLOSE_MODAL,
+  };
 }
 
 /***************** Reducer ********************/
 export interface IModalState {
-    modalType?: string | null;
-    modalProps?: object | null;
+  modalType?: string | null;
+  modalProps?: object | null;
 }
 
 const initialState: IModalState = {};
@@ -32,17 +32,18 @@ const initialState: IModalState = {};
 }; */
 
 export default function modalReducer(
-    state: IModalState = initialState, 
-    { type, payload } : IAction = { type: "", payload: undefined}
+  state: IModalState = initialState,
+  { type, payload }: IAction = { type: '', payload: undefined },
 ): IModalState {
-    switch(type) {
-        case OPEN_MODAL:
-            const {modalType, modalProps} = payload;
-            return {modalType, modalProps};
+  switch (type) {
+    case OPEN_MODAL:
+      const { modalType, modalProps } = payload;
+      return { modalType, modalProps };
 
-        case CLOSE_MODAL:
-            return {}
+    case CLOSE_MODAL:
+      return {};
 
-        default: return state;
-    }
+    default:
+      return state;
+  }
 }

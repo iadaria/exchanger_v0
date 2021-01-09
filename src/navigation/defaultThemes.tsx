@@ -8,46 +8,47 @@ import { StackNavigationOptions } from '@react-navigation/stack';
 import { theme } from '../constants';
 
 export const defaultScreenOptions: StackNavigationOptions = {
-    title: "Бот-Гарант",
-    headerStyle: {
-        backgroundColor: theme.colors.main
-    },
-    headerTintColor: theme.colors.white,
-    headerTitleAlign: "center"
+  title: 'Бот-Гарант',
+  headerStyle: {
+    backgroundColor: theme.colors.main,
+  },
+  headerTintColor: theme.colors.white,
+  headerTitleAlign: 'center',
 };
 
 export const defaultTabScreenOptions: StackNavigationOptions = {
-    ...defaultScreenOptions,
-    headerLeft: () => (
-        <HeaderButtons HeaderButtonComponent={AppHeaderIcon}>
-            <Item
-                title="title"
-                iconName="headphones"
-                onPress={() => {
-                    Linking.openURL(`http://t.me/${theme.vars.telgroup}`)
-                        .catch(error => {
-                            console.log('error when open telegram group', error);
-                            ErrorToast(error.message)
-                        });
-                }}
-            />
-        </HeaderButtons>
-    ),
-    headerRight: () => (
-        <HeaderButtons HeaderButtonComponent={AppHeaderIcon}>
-            <Item
-                title="title"
-                iconName="bell-outline"
-                onPress={() => console.log('message')}
-            />
-        </HeaderButtons>
-    )
+  ...defaultScreenOptions,
+  headerLeft: () => (
+    <HeaderButtons HeaderButtonComponent={AppHeaderIcon}>
+      <Item
+        title="title"
+        iconName="headphones"
+        onPress={() => {
+          Linking.openURL(`http://t.me/${theme.vars.telgroup}`).catch(
+            (error) => {
+              console.log('error when open telegram group', error);
+              ErrorToast(error.message);
+            },
+          );
+        }}
+      />
+    </HeaderButtons>
+  ),
+  headerRight: () => (
+    <HeaderButtons HeaderButtonComponent={AppHeaderIcon}>
+      <Item
+        title="title"
+        iconName="bell-outline"
+        onPress={() => console.log('message')}
+      />
+    </HeaderButtons>
+  ),
 };
 
 export const defaultTheme = {
-    ...DefaultTheme,
-    colors: {
-        ...DefaultTheme.colors,
-        background: theme.colors.screen
-    }
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: theme.colors.screen,
+  },
 };

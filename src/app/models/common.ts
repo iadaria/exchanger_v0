@@ -1,8 +1,8 @@
 export interface Identifier {
-    id: string;
+  id: string;
 }
 
 export interface IAction {
-    type: string;
-    payload?: any;
+  type: string;
+  payload?: any;
 }

@@ -1,27 +1,27 @@
-import { Identifier } from "./common";
+import { Identifier } from './common';
 
 export interface IProfile extends Identifier {
-    //id: string,
-    displayName: string,
-    createdAt: Date,
-    description: string,
-    email: string | null,
-    photoURL: string | null,
-    phoneNumber: string | null,
-    rating: number,
-    like: number,
-    dislike: number,
+  //id: string,
+  displayName: string;
+  createdAt: Date;
+  description: string;
+  email: string | null;
+  photoURL: string | null;
+  phoneNumber: string | null;
+  rating: number;
+  like: number;
+  dislike: number;
 }
 
 export const DefaultProfileValues: IProfile = {
-    id: "",
-    displayName: "",
-    createdAt: new Date(0),
-    description: "",
-    email: null,
-    photoURL: null,
-    phoneNumber: null,
-    rating: 0,
-    like: 0,
-    dislike: 0,
+  id: '',
+  displayName: '',
+  createdAt: new Date(0),
+  description: '',
+  email: null,
+  photoURL: null,
+  phoneNumber: null,
+  rating: 0,
+  like: 0,
+  dislike: 0,
 };
