@@ -190,9 +190,9 @@ dependencies {
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 
-    implementation 'androidx.multidex:multidex:2.0.1' //added by Dasha
+    // implementation 'androidx.multidex:multidex:2.0.1' //added by Dasha
 
-    //implementation 'com.android.support:multidex:1.0.3' //test
+    implementation 'com.android.support:multidex:1.0.3' //test
 
     implementation 'com.google.firebase:firebase-analytics:17.5.0' // by Dasha
 

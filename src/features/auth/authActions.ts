@@ -37,12 +37,6 @@ export function verifyAuth() {
         const profileRef = getUserProfile(user.uid);
         profileRef?.onSnapshot(
           (snapshot: FirebaseFirestoreTypes.DocumentSnapshot) => {
-            snapshot &&
-              console.log(
-                'verifyAuth -> profileRef.onSnapshot event',
-                snapshot.metadata,
-
-
             snapshot.exists &&
               dispatch(
                 listenToCurrentUserProfile(
