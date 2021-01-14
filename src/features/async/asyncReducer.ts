@@ -1,4 +1,4 @@
-import { IAction } from '../models/common';
+import { IAction } from '../../app/models/common';
 
 /***************** Async constants ********************/
 const ASYNC_ACTION_START = 'ASYNC_ACTION_START';

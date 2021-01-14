@@ -6,7 +6,7 @@ import {
   getUserProfile,
 } from '../../app/firestore/firestoreService';
 import { listenToCurrentUserProfile } from '../profiles/profileActions';
-import { APP_LOADED } from '../../app/async/asyncReducer';
+import { APP_LOADED } from '../async/asyncReducer';
 import { getColorText } from '../../app/common/utils/utils';
 import { IUserByProvider } from '../../app/models/IUser';
 import { IAction } from '../../app/models/common';
