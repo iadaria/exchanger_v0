@@ -1,6 +1,4 @@
-import {
-    SIGN_IN_USER,
-    SIGN_OUT_USER } from './authConstants';
+import { SIGN_IN_USER, SIGN_OUT_USER } from './authConstants';
 //import firebase from '../../app/config/firebase'; //It's for Web
 import auth, { FirebaseAuthTypes } from '@react-native-firebase/auth'; // For RN
 import {

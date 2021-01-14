@@ -1,8 +1,9 @@
 import React from 'react';
+import './src/initialImports';
 import AppNavigation from './src/navigation/AppNavigation';
 
 const App: () => React$Node = () => {
-    return (<AppNavigation />);
+  return <AppNavigation />;
 };
 
 export default App;
