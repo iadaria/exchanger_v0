@@ -9,7 +9,9 @@
         "test": "jest",
         "lint": "eslint .",
         "rescache": "react-native start --reset-cache",
-        "reset": "react-native run-android -- --reset-cache"
+        "reset": "react-native run-android -- --reset-cache",
+        "eject": "react-native eject",
+        "pod": "npx pod-install"
     },
     "dependencies": {
         "@firebase/messaging-types": "^0.5.0",

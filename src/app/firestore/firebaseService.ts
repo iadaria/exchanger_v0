@@ -5,13 +5,16 @@ import { GoogleSignin } from '@react-native-community/google-signin';
 import ErrorToast from '../common/components/AppToast';
 import { getColorText } from '../common/utils/utils';
 import AsyncStorage from '@react-native-community/async-storage';
-import { FirebaseDatabaseTypes } from '@react-native-firebase/database';
-import { FirebaseAuthTypes } from '@react-native-firebase/auth';
+// import { FirebaseDatabaseTypes } from '@react-native-firebase/database';
+// import { FirebaseAuthTypes } from '@react-native-firebase/auth';
 
 GoogleSignin.configure({
   //For React Native
   webClientId:
     '1088744563414-4ga66dvdvts18ru1bogktieahaf0viiv.apps.googleusercontent.com',
+  //iosClientId:
+  // 'com.googleusercontent.apps.1088744563414-euve4hop5e02h36si3958aat7uscjo9n',
+  // offlineAccess: false,
 });
 /*************************** Sign ****************************/
 interface ICredential {
