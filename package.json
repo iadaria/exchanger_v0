@@ -11,6 +11,8 @@
         "rescache": "react-native start --reset-cache",
         "reset": "react-native run-android -- --reset-cache",
         "eject": "react-native eject",
+        "clean-project": "npx react-native-clean-project",
+        "pod-update": "yarn upgrade --latest && npx pod-install",
         "pod": "npx pod-install"
     },
     "dependencies": {
