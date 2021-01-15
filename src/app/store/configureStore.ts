@@ -1,5 +1,5 @@
 import { applyMiddleware, createStore, compose } from 'redux';
-import { configuredReactotron } from '../../initialImports/reactotron';
+import { configuredReactotron } from '../../initial-imports/reactotron';
 import thunk from 'redux-thunk';
 import { verifyAuth } from '../../features/auth/authActions';
 import rootReducer from './rootReducer';

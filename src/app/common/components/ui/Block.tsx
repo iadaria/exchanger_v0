@@ -1,12 +1,14 @@
 import React from 'react';
 import { StyleSheet, Animated, View, StyleProp, ViewStyle } from 'react-native';
-import { theme } from '../../../../constants';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
+import { colors, sizes } from '../../constants';
 import {
   IBlockStyleProps,
   IUiBlock,
   IUiMargin,
   IUiPadding,
-} from '../../../models/IUi';
+} from '../../../models/ui';
 import { getColorText } from '../../utils/utils';
 
 export function Block(props: IUiBlock) {
@@ -15,10 +17,10 @@ export function Block(props: IUiBlock) {
 
     if (typeof margin === 'number') {
       return {
-        marginTop: margin,
-        marginRight: margin,
-        marginBottom: margin,
-        marginLeft: margin,
+        marginTop: wp(margin),
+        marginRight: wp(margin),
+        marginBottom: wp(margin),
+        marginLeft: wp(margin),
       };
     }
 
@@ -27,31 +29,31 @@ export function Block(props: IUiBlock) {
       switch (marginSize) {
         case 1:
           return {
-            marginTop: margin[0],
-            marginRight: margin[0],
-            marginBottom: margin[0],
-            marginLeft: margin[0],
+            marginTop: wp(margin[0]),
+            marginRight: wp(margin[0]),
+            marginBottom: wp(margin[0]),
+            marginLeft: wp(margin[0]),
           };
         case 2:
           return {
-            marginTop: margin[0],
-            marginRight: margin[1],
-            marginBottom: margin[0],
-            marginLeft: margin[1],
+            marginTop: wp(margin[0]),
+            marginRight: wp(margin[1]),
+            marginBottom: wp(margin[0]),
+            marginLeft: wp(margin[1]),
           };
         case 3:
           return {
-            marginTop: margin[0],
-            marginRight: margin[1],
-            marginBottom: margin[2],
-            marginLeft: margin[1],
+            marginTop: wp(margin[0]),
+            marginRight: wp(margin[1]),
+            marginBottom: wp(margin[2]),
+            marginLeft: wp(margin[1]),
           };
         default:
           return {
-            marginTop: margin[0],
-            marginRight: margin[1],
-            marginBottom: margin[2],
-            marginLeft: margin[3],
+            marginTop: wp(margin[0]),
+            marginRight: wp(margin[1]),
+            marginBottom: wp(margin[2]),
+            marginLeft: wp(margin[3]),
           };
       }
     }
@@ -62,10 +64,10 @@ export function Block(props: IUiBlock) {
     const { padding } = props;
     if (typeof padding === 'number') {
       return {
-        paddingTop: padding,
-        paddingRight: padding,
-        paddingBottom: padding,
-        paddingLeft: padding,
+        paddingTop: wp(padding),
+        paddingRight: wp(padding),
+        paddingBottom: wp(padding),
+        paddingLeft: wp(padding),
       };
     }
 
@@ -74,38 +76,36 @@ export function Block(props: IUiBlock) {
       switch (paddingSize) {
         case 1:
           return {
-            paddingTop: padding[0],
-            paddingRight: padding[0],
-            paddingBottom: padding[0],
-            paddingLeft: padding[0],
+            paddingTop: wp(padding[0]),
+            paddingRight: wp(padding[0]),
+            paddingBottom: wp(padding[0]),
+            paddingLeft: wp(padding[0]),
           };
         case 2:
           return {
-            paddingTop: padding[0],
-            paddingRight: padding[1],
-            paddingBottom: padding[0],
-            paddingLeft: padding[1],
+            paddingTop: wp(padding[0]),
+            paddingRight: wp(padding[1]),
+            paddingBottom: wp(padding[0]),
+            paddingLeft: wp(padding[1]),
           };
         case 3:
           return {
-            paddingTop: padding[0],
-            paddingRight: padding[1],
-            paddingBottom: padding[2],
-            paddingLeft: padding[1],
+            paddingTop: wp(padding[0]),
+            paddingRight: wp(padding[1]),
+            paddingBottom: wp(padding[2]),
+            paddingLeft: wp(padding[1]),
           };
         default:
           return {
-            paddingTop: padding[0],
-            paddingRight: padding[1],
-            paddingBottom: padding[2],
-            paddingLeft: padding[3],
+            paddingTop: wp(padding[0]),
+            paddingRight: wp(padding[1]),
+            paddingBottom: wp(padding[2]),
+            paddingLeft: wp(padding[3]),
           };
       }
     }
     return {};
   }
-
-  //console.log(others);
 
   const {
     flex,
@@ -120,6 +120,7 @@ export function Block(props: IUiBlock) {
     bottom,
     card,
     shadow,
+    safe,
     color,
     space,
     padding,
@@ -137,7 +138,7 @@ export function Block(props: IUiBlock) {
     styles.block,
     flex && { flex },
     flex === false && { flex: 0 }, // reset - disable flex
-    base && { padding: theme.sizes.padding },
+    base && { padding: sizes.padding },
     row && styles.row,
     column && styles.column,
     center && styles.center,
@@ -164,6 +165,14 @@ export function Block(props: IUiBlock) {
     );
   }
 
+  if (safe) {
+    return (
+      <SafeAreaView style={blockStyles} {...otherProps}>
+        {children}
+      </SafeAreaView>
+    );
+  }
+
   return (
     <View style={blockStyles} {...otherProps}>
       {children}
@@ -182,7 +191,7 @@ export const styles = StyleSheet.create<IBlockStyleProps>({
     flexDirection: 'column',
   },
   card: {
-    borderRadius: theme.sizes.radius,
+    borderRadius: sizes.radius,
   },
   center: {
     alignItems: 'center',
@@ -203,25 +212,25 @@ export const styles = StyleSheet.create<IBlockStyleProps>({
     justifyContent: 'flex-end',
   },
   shadow: {
-    shadowColor: theme.colors.black,
+    shadowColor: colors.black,
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 13,
     elevation: 2,
   },
-  accent: { backgroundColor: theme.colors.accent },
-  primary: { backgroundColor: theme.colors.primary },
-  secondary: { backgroundColor: theme.colors.secondary },
-  tertiary: { backgroundColor: theme.colors.tertiary },
-  black: { backgroundColor: theme.colors.black },
-  white: { backgroundColor: theme.colors.white },
-  gray: { backgroundColor: theme.colors.gray },
-  gray2: { backgroundColor: theme.colors.gray2 },
+  accent: { backgroundColor: colors.accent },
+  primary: { backgroundColor: colors.primary },
+  secondary: { backgroundColor: colors.secondary },
+  tertiary: { backgroundColor: colors.tertiary },
+  black: { backgroundColor: colors.black },
+  white: { backgroundColor: colors.white },
+  gray: { backgroundColor: colors.gray },
+  gray2: { backgroundColor: colors.gray2 },
 
-  main: { backgroundColor: theme.colors.main },
-  submain: { backgroundColor: theme.colors.submain },
-  orange: { backgroundColor: theme.colors.orange },
-  suborange: { backgroundColor: theme.colors.suborange },
-  pink: { backgroundColor: theme.colors.pink },
-  section: { backgroundColor: theme.colors.section },
+  main: { backgroundColor: colors.main },
+  submain: { backgroundColor: colors.submain },
+  orange: { backgroundColor: colors.orange },
+  suborange: { backgroundColor: colors.suborange },
+  pink: { backgroundColor: colors.pink },
+  section: { backgroundColor: colors.section },
 });

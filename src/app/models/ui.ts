@@ -1,5 +1,4 @@
-import { StyleSheet } from 'react-native';
-import { string } from 'yup';
+import { ReactNode } from 'react';
 
 export interface IUiBlock {
   flex?: boolean;
@@ -16,6 +15,7 @@ export interface IUiBlock {
   shadow?: boolean;
   color?: string;
   space?: string;
+  safe?: boolean;
   padding?: number | number[];
   margin?: number | number[];
   animated?: boolean;
@@ -85,4 +85,19 @@ export interface IUiColor {
   suborange?: string;
   pink?: string;
   section?: string;
+}
+
+export interface IUiInput {
+  label?: string;
+  error?: boolean;
+  secure?: boolean;
+  rightLabel?: JSX.Element;
+  rightStyle?: object;
+  onRightPress?: Function;
+  email?: boolean;
+  phone?: boolean;
+  number?: boolean;
+  style?: object;
+  children?: ReactNode;
+  [key: string]: any;
 }
