@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { theme } from '../../../../constants';
 
-export default function SectionTextRow({ label, value }) {
+export default function SectionTextRow({ label, value }: any) {
   return (
     <View style={styles.row}>
       <View style={styles.label}>{label}</View>

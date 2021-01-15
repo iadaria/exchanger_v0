@@ -21,7 +21,7 @@ export interface IUiBlock {
   animated?: boolean;
   wrap?: boolean;
   style?: object;
-  children?: JSX.Element[];
+  children?: ReactNode;
   [key: string]: any;
 }
 
