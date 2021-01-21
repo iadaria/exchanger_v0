@@ -9,7 +9,6 @@ import {
   IUiMargin,
   IUiPadding,
 } from '../../../models/ui';
-import { getColorText } from '../../utils/utils';
 
 export function Block(props: IUiBlock) {
   function handleMargins(): IUiMargin {
@@ -109,6 +108,7 @@ export function Block(props: IUiBlock) {
 
   const {
     flex,
+    content,
     base,
     row,
     column,
@@ -132,13 +132,11 @@ export function Block(props: IUiBlock) {
     ...otherProps
   } = props;
 
-  console.log(getColorText('otherProps', otherProps, 'yellow'));
-
   const blockStyles = [
     styles.block,
     flex && { flex },
-    flex === false && { flex: 0 }, // reset - disable flex
-    base && { padding: sizes.padding },
+    content && { flex: 0 }, // reset - disable flex
+    base && { padding: wp(sizes.padding) },
     row && styles.row,
     column && styles.column,
     center && styles.center,

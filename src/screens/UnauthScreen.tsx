@@ -2,7 +2,7 @@ import { ParamListBase } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import React from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
-import Padlock from '../../assets/images/padlock-svgrepo-com.svg';
+import { Padlock } from '../../assets';
 import { theme } from '../constants';
 
 export default function UnauthScreen({
@@ -22,7 +22,7 @@ export default function UnauthScreen({
       <View style={styles.authButtonView}>
         <Button
           color={theme.colors.suborange}
-          onPress={() => navigation.navigate('MainLogin')}
+          onPress={() => navigation.navigate('Main')}
           title="Авторизироваться"
         />
       </View>

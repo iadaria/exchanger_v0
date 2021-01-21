@@ -1,9 +1,10 @@
 import React from 'react';
 import { ParamListBase } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { View, Text, StyleSheet, Button } from 'react-native';
 import { Block } from '../app/common/components/ui';
-import { theme } from '../constants';
+import { AppText } from '../app/common/components/ui';
+import { sizes } from '../app/common/constants/sizes';
+import { AppButton } from '../app/common/components/ui/AppButton';
 
 export default function MainScreen({
   navigation,
@@ -11,54 +12,36 @@ export default function MainScreen({
   navigation: StackNavigationProp<ParamListBase>;
 }) {
   return (
-    <Block base color="main">
-      <Text style={styles.mainText}>
-        Лучшее место для покупки и продажи {/* скинов */}, голды, аккаунтов 🎉
-      </Text>
-      <Text style={styles.discountText}>
-        0% комиссия - успевай пока внедряю
-      </Text>
-      <Text style={styles.discountText}>
-        Авторизируйтесь, чтобы использовать приложение на полную
-      </Text>
-      <View style={styles.authButtonView}>
-        <Button
-          color={theme.colors.suborange}
-          onPress={() => navigation.navigate('Login')}
-          title="Авторизируйтесь"
-        />
-      </View>
-      <View style={styles.nextButtonView}>
-        <Button
-          color={theme.colors.main}
-          onPress={() => navigation.navigate('MainBottom')}
-          title="Далее"
-        />
-      </View>
+    <Block safe base color="main">
+      <Block content>
+        <AppText center h1 white>
+          Лучшее место для покупки и продажи {/* скинов */}, голды, аккаунтов 🎉
+        </AppText>
+      </Block>
+
+      <Block content padding={[sizes.base, 0, 0, 0]}>
+        <AppText center h2 white>
+          0% комиссия - успевай пока внедряю
+        </AppText>
+      </Block>
+
+      <Block content padding={[sizes.base, 0]}>
+        <AppText center h2 white>
+          Авторизируйтесь, чтобы использовать приложение на полную
+        </AppText>
+      </Block>
+
+      <AppButton yellow onPress={() => navigation.navigate('Login')}>
+        <AppText center h3 white capitalize>
+          Авторизируйтесь
+        </AppText>
+      </AppButton>
+
+      <AppButton main shadow onPress={() => navigation.navigate('MainBottom')}>
+        <AppText center h3 white capitalize>
+          Далее
+        </AppText>
+      </AppButton>
     </Block>
   );
 }
-
-const styles = StyleSheet.create({
-  mainText: {
-    //borderColor: 'yellow', borderWidth: 1, borderStyle: 'solid',
-    marginTop: '20%',
-    //paddingHorizontal: 5,
-    color: 'white',
-    textAlign: 'center',
-    fontSize: 30,
-  },
-  discountText: {
-    marginVertical: '5%',
-    textAlign: 'center',
-    fontSize: 25,
-    color: 'white',
-  },
-  authButtonView: {
-    marginHorizontal: 10,
-  },
-  nextButtonView: {
-    marginTop: 10,
-    marginHorizontal: 10,
-  },
-});

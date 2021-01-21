@@ -14,6 +14,9 @@ export const defaultScreenOptions: StackNavigationOptions = {
   },
   headerTintColor: theme.colors.white,
   headerTitleAlign: 'center',
+  headerBackTitleVisible: true,
+  headerTruncatedBackTitle: '',
+  headerBackTitle: '',
 };
 
 export const defaultTabScreenOptions: StackNavigationOptions = {

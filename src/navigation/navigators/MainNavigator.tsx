@@ -5,12 +5,12 @@ import { IRootState } from '../../app/store/rootReducer';
 import { IAuthState } from '../../features/auth/authReducer';
 import BottomNavigator from './BottomNavigator';
 import {
-  defaultScreenOptions,
+  // defaultScreenOptions,
   defaultTabScreenOptions,
 } from '../defaultThemes';
 import LoginNavigator from './LoginNavigator';
 
-export default function MainMenu(): JSX.Element {
+export default function MainNavigator(): JSX.Element {
   const { authenticated } = useSelector<IRootState>(
     (state) => state.auth,
   ) as IAuthState;
@@ -18,10 +18,11 @@ export default function MainMenu(): JSX.Element {
   const Main = createStackNavigator();
   return (
     <Main.Navigator
-      initialRouteName={authenticated ? 'MainBottom' : 'MainLogin'}>
+      initialRouteName={authenticated ? 'MainBottom' : 'LoginNavigator'}>
       <Main.Screen
-        options={defaultScreenOptions}
-        name="MainLogin"
+        options={{ headerShown: false }}
+        // options={defaultScreenOptions}
+        name="LoginNavigator"
         component={LoginNavigator}
       />
       <Main.Screen

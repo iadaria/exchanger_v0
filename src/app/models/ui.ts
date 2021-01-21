@@ -1,12 +1,13 @@
 import { ReactNode } from 'react';
 
 export interface IUiBlock {
-  flex?: boolean;
+  flex?: number;
+  content?: boolean;
   base?: boolean;
   row?: string;
   column?: string;
-  center?: string;
-  middle?: string;
+  center?: boolean;
+  middle?: boolean;
   left?: string;
   right?: string;
   top?: string;
@@ -101,3 +102,41 @@ export interface IUiInput {
   children?: ReactNode;
   [key: string]: any;
 }
+
+// export interface IUiText {
+//   h1?: boolean;
+//   h2?: boolean;
+//   h3?: boolean;
+//   title?: boolean;
+//   body?: boolean;
+//   caption?: boolean;
+//   // small,
+//   size?: number;
+//   transform?: string;
+//   align?: string;
+//   // styling
+//   regular?: boolean;
+//   bold?: boolean;
+//   semibold?: boolean;
+//   medium?: boolean;
+//   weight?: boolean;
+//   light?: boolean;
+//   center?: boolean;
+//   right?: boolean;
+//   spacing; // letter-spacing
+//   height; // line-height
+//   capitalize;
+//   // colors
+//   color;
+//   accent;
+//   primary;
+//   secondary;
+//   // tertiary,
+//   black;
+//   white;
+//   gray;
+//   gray2;
+//   style?: object;
+//   children?: ReactNode;
+//   [key: string]: any;
+// }

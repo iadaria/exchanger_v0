@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { defaultTabScreenOptions } from '../defaultThemes';
+// import { defaultTabScreenOptions } from '../defaultThemes';
 import UnauthScreen from '../../screens/UnauthScreen';
 
 export default function UnauthNavigator() {
@@ -9,7 +9,8 @@ export default function UnauthNavigator() {
   return (
     <Unauth.Navigator>
       <Unauth.Screen
-        options={defaultTabScreenOptions}
+        options={{ headerShown: false }}
+        // options={defaultTabScreenOptions}
         name="Unauth"
         component={UnauthScreen}
       />

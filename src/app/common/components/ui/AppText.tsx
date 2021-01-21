@@ -1,6 +1,7 @@
 // just copy this code from the driving repo :)
 import React from 'react';
 import { Text, StyleSheet } from 'react-native';
+import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
 import { colors, fonts, sizes } from '../../constants';
 
 export function AppText(props: any) {
@@ -26,6 +27,7 @@ export function AppText(props: any) {
     right,
     spacing, // letter-spacing
     height, // line-height
+    capitalize,
     // colors
     color,
     accent,
@@ -40,6 +42,8 @@ export function AppText(props: any) {
     style,
     ...otherProps
   } = props;
+
+  // console.log('*** children', children);
 
   const textStyles = [
     styles.text,
@@ -79,7 +83,9 @@ export function AppText(props: any) {
 
   return (
     <Text style={textStyles} {...otherProps}>
-      {children}
+      {capitalize && typeof children === 'string'
+        ? children.toUpperCase()
+        : children}
     </Text>
   );
 }
@@ -87,7 +93,7 @@ export function AppText(props: any) {
 const styles = StyleSheet.create({
   // default style
   text: {
-    fontSize: sizes.font,
+    fontSize: wp(sizes.font),
     color: colors.black,
   },
   // variations

@@ -1,17 +1,17 @@
 export const sizes = {
   // global sizes
-  base: 16,
-  font: 14,
-  radius: 6,
+  base: 8,
+  font: 3,
+  radius: 1,
   padding: 5,
 
   // font sizes
-  h1: 26,
-  h2: 20,
-  h3: 18,
-  title: 18,
-  header: 16,
-  body: 14,
-  caption: 12,
+  h1: 7,
+  h2: 5,
+  h3: 4,
+  title: 6,
+  header: 5,
+  body: 3,
+  caption: 2,
   border: 5,
 };

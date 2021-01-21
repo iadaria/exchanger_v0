@@ -1,3 +1,4 @@
+import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
 import { sizes } from './sizes';
 
 export const fonts = {
@@ -8,24 +9,24 @@ export const fonts = {
   regular: 'Montserrat-Regular',
   // thin: 'Montserrat-Thin',
   h1: {
-    fontSize: sizes.h1,
+    fontSize: wp(sizes.h1),
   },
   h2: {
-    fontSize: sizes.h2,
+    fontSize: wp(sizes.h2),
   },
   h3: {
-    fontSize: sizes.h3,
+    fontSize: wp(sizes.h3),
   },
   header: {
-    fontSize: sizes.header,
+    fontSize: wp(sizes.header),
   },
   title: {
-    fontSize: sizes.title,
+    fontSize: wp(sizes.title),
   },
   body: {
-    fontSize: sizes.body,
+    fontSize: wp(sizes.body),
   },
   caption: {
-    fontSize: sizes.caption,
+    fontSize: wp(sizes.caption),
   },
 };
