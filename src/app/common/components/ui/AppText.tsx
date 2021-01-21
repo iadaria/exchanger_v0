@@ -11,6 +11,7 @@ export function AppText(props: any) {
     h3,
     title,
     body,
+    header,
     caption,
     // small,
     size,
@@ -51,6 +52,7 @@ export function AppText(props: any) {
     h2 && styles.h2,
     h3 && styles.h3,
     title && styles.title,
+    header && styles.header,
     body && styles.body,
     caption && styles.caption,
     // small && styles.small,
@@ -98,19 +100,21 @@ const styles = StyleSheet.create({
   },
   // variations
   regular: {
-    fontWeight: 'normal',
+    // fontWeight: 'normal',
+    fontFamily: 'Montserrat-Regular',
   },
   bold: {
-    fontWeight: 'bold',
+    // fontWeight: 'bold',
+    fontFamily: 'Montserrat-Bold',
+  },
+  black: {
+    fontFamily: 'Montserrat-Black',
+  },
+  light: {
+    fontFamily: 'Montserrat-Light',
   },
   semibold: {
     fontWeight: '500',
-  },
-  medium: {
-    fontWeight: '500',
-  },
-  light: {
-    fontWeight: '200',
   },
   // position
   center: { textAlign: 'center' },
@@ -120,7 +124,7 @@ const styles = StyleSheet.create({
   primary: { color: colors.primary },
   secondary: { color: colors.secondary },
   // tertiary: { color: colors.tertiary },
-  black: { color: colors.black },
+  // black: { color: colors.black },
   white: { color: colors.white },
   gray: { color: colors.gray },
   gray2: { color: colors.gray2 },
@@ -129,6 +133,7 @@ const styles = StyleSheet.create({
   h2: fonts.h2,
   h3: fonts.h3,
   title: fonts.title,
+  header: fonts.header,
   body: fonts.body,
   caption: fonts.caption,
   //small: fonts.small

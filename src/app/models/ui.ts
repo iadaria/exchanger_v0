@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 
 export interface IUiBlock {
   flex?: number;
+  debug?: boolean;
   content?: boolean;
   base?: boolean;
   row?: string;
@@ -42,6 +43,7 @@ export interface IUiPadding {
 
 export interface IBlockStyleProps {
   block: object;
+  debug: object;
   row: object;
   column: object;
   card: object;

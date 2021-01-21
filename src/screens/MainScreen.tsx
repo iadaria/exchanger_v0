@@ -1,10 +1,8 @@
 import React from 'react';
 import { ParamListBase } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { Block } from '../app/common/components/ui';
-import { AppText } from '../app/common/components/ui';
+import { Block, AppText, AppButton } from '../app/common/components/ui';
 import { sizes } from '../app/common/constants/sizes';
-import { AppButton } from '../app/common/components/ui/AppButton';
 
 export default function MainScreen({
   navigation,

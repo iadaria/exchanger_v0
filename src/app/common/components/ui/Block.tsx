@@ -108,6 +108,7 @@ export function Block(props: IUiBlock) {
 
   const {
     flex,
+    debug,
     content,
     base,
     row,
@@ -127,6 +128,7 @@ export function Block(props: IUiBlock) {
     margin,
     animated,
     wrap,
+    main,
     style,
     children,
     ...otherProps
@@ -135,6 +137,7 @@ export function Block(props: IUiBlock) {
   const blockStyles = [
     styles.block,
     flex && { flex },
+    debug && styles.debug,
     content && { flex: 0 }, // reset - disable flex
     base && { padding: wp(sizes.padding) },
     row && styles.row,
@@ -151,7 +154,10 @@ export function Block(props: IUiBlock) {
     shadow && styles.shadow,
     space && { justifyContent: `space-${space}` },
     wrap && { flexWrap: 'wrap' },
+    // colors
     color && styles[color as keyof typeof styles], // predefined styles for backgroundColor
+    main && styles.main,
+    // others
     style,
   ] as StyleProp<ViewStyle>;
 
@@ -181,6 +187,10 @@ export function Block(props: IUiBlock) {
 export const styles = StyleSheet.create<IBlockStyleProps>({
   block: {
     flex: 1, //borderWidth: 1, borderColor: 'red'
+  },
+  debug: {
+    borderWidth: 1,
+    borderColor: 'red',
   },
   row: {
     flexDirection: 'row',
