@@ -11,22 +11,22 @@ export default function UnauthScreen({
   navigation: StackNavigationProp<ParamListBase>;
 }) {
   return (
-    <Block safe base middle>
-      <Block content center>
+    <Block safe full base middle>
+      <Block center>
         <Padlock height={130} width={130} />
-        <Block content margin={[sizes.top, 0, 0]}>
+        <Block margin={[sizes.top, 0, 0]}>
           <AppText title bold>
             Доступ запрещён
           </AppText>
         </Block>
-        <Block content margin={[sizes.top * 1.5, 0, 0]}>
+        <Block margin={[sizes.top * 1.5, 0, 0]}>
           <AppText header center>
             Войдите в свой акканут для просмотра этого раздела
           </AppText>
         </Block>
       </Block>
 
-      <Block content margin={[sizes.top, 0, 0]}>
+      <Block margin={[sizes.top, 0, 0]}>
         <AppButton yellow onPress={() => navigation.navigate('Main')}>
           <AppText center h3 white capitalize>
             Авторизироваться

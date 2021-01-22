@@ -107,6 +107,7 @@ export function Block(props: IUiBlock) {
   }
 
   const {
+    full,
     flex,
     debug,
     content,
@@ -135,7 +136,8 @@ export function Block(props: IUiBlock) {
   } = props;
 
   const blockStyles = [
-    styles.block,
+    full && styles.block,
+    !full && { flex: 0 },
     flex && { flex },
     debug && styles.debug,
     content && { flex: 0 }, // reset - disable flex

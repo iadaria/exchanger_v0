@@ -41,6 +41,7 @@ export function AppText(props: any) {
     gray2,
     children,
     style,
+    disabled,
     ...otherProps
   } = props;
 
@@ -81,6 +82,7 @@ export function AppText(props: any) {
     gray && styles.gray,
     gray2 && styles.gray2,
     style, // rewrite predefined styles
+    disabled && styles.gray,
   ];
 
   return (

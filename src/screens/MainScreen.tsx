@@ -10,20 +10,20 @@ export default function MainScreen({
   navigation: StackNavigationProp<ParamListBase>;
 }) {
   return (
-    <Block safe base color="main">
+    <Block safe base full color="main">
       <Block content>
         <AppText center h1 white>
           Лучшее место для покупки и продажи {/* скинов */}, голды, аккаунтов 🎉
         </AppText>
       </Block>
 
-      <Block content padding={[sizes.base, 0, 0, 0]}>
+      <Block padding={[sizes.base, 0, 0, 0]}>
         <AppText center h2 white>
           0% комиссия - успевай пока внедряю
         </AppText>
       </Block>
 
-      <Block content padding={[sizes.base, 0]}>
+      <Block padding={[sizes.base, 0]}>
         <AppText center h2 white>
           Авторизируйтесь, чтобы использовать приложение на полную
         </AppText>

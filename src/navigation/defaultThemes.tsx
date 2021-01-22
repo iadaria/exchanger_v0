@@ -5,14 +5,16 @@ import { AppHeaderIcon } from '../app/common/components/ui/AppHeaderIcon';
 import ErrorToast from '../app/common/components/AppToast';
 import { DefaultTheme } from '@react-navigation/native';
 import { StackNavigationOptions } from '@react-navigation/stack';
-import { theme } from '../constants';
+import { colors } from '../app/common/constants/colors';
 
 export const defaultScreenOptions: StackNavigationOptions = {
   title: 'Бот-Гарант',
   headerStyle: {
-    backgroundColor: theme.colors.main,
+    backgroundColor: colors.main,
+    borderWidth: 1,
+    borderColor: 'red',
   },
-  headerTintColor: theme.colors.white,
+  headerTintColor: colors.white,
   headerTitleAlign: 'center',
   headerBackTitleVisible: true,
   headerTruncatedBackTitle: '',
@@ -27,12 +29,10 @@ export const defaultTabScreenOptions: StackNavigationOptions = {
         title="title"
         iconName="headphones"
         onPress={() => {
-          Linking.openURL(`http://t.me/${theme.vars.telgroup}`).catch(
-            (error) => {
-              console.log('error when open telegram group', error);
-              ErrorToast(error.message);
-            },
-          );
+          Linking.openURL(`http://t.me/${vars.telgroup}`).catch((error) => {
+            console.log('error when open telegram group', error);
+            ErrorToast(error.message);
+          });
         }}
       />
     </HeaderButtons>
@@ -51,7 +51,7 @@ export const defaultTabScreenOptions: StackNavigationOptions = {
 export const defaultTheme = {
   ...DefaultTheme,
   colors: {
-    ...DefaultTheme.colors,
-    background: theme.colors.screen,
+    ...DefaultTheme,
+    background: colors.screen,
   },
 };

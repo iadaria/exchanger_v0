@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 
 export interface IUiBlock {
+  full?: boolean;
   flex?: number;
   debug?: boolean;
   content?: boolean;

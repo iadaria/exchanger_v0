@@ -1,16 +1,20 @@
 import React from 'react';
-import { View, Text, StyleSheet, TextInput, Button } from 'react-native';
-import { Block, AppText, AppPapperInput } from '../app/common/components/ui';
+import {
+  Block,
+  AppText,
+  AppPapperInput,
+  AppButton,
+  Divider,
+} from '../app/common/components/ui';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import Separator from '../app/common/components/ui/Separator';
 import SocialLogin from '../features/auth/SocialLogin';
 import { signInWithEmail } from '../app/firestore/firebaseService';
 import { getColorText } from '../app/common/utils/utils';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { ParamListBase } from '@react-navigation/native';
 import { IUserFormValues } from '../app/models/IUser';
-import { theme } from '../constants';
+import { sizes } from '../app/common/constants/sizes';
 //TODO Error Sign in + after error add "Enter the code shown above" - capchar, forgot password and
 //etc
 
@@ -26,7 +30,7 @@ export default function LoginScreen({
   const goToMainScreen = () => navigation.navigate('MainBottom');
 
   return (
-    <Block safe base>
+    <Block safe base full>
       <Formik
         initialValues={{
           email: '',
@@ -63,13 +67,16 @@ export default function LoginScreen({
         }) => {
           const isDisabledSubmit = !isValid || !dirty || isSubmitting;
           return (
-            <Block debug>
+            <Block full debug>
               <AppText big center>
                 Добро пажаловать 🎉
               </AppText>
-              <AppText h3 center>
-                Введите данные для продолжения работы в iad
-              </AppText>
+
+              <Block margin={[sizes.top, 0]}>
+                <AppText h3 center>
+                  Введите данные для продолжения работы в iad
+                </AppText>
+              </Block>
 
               {errors.auth && (
                 <AppText accent center>
@@ -80,43 +87,44 @@ export default function LoginScreen({
               )}
 
               <AppPapperInput
-                outlined
                 main
-                label="Email"
+                label="Имя или адрес электронной почты"
                 value={values.email}
                 onChangeText={handleChange('email')}
+                onBlur={handleBlur('email')}
               />
 
-              <TextInput
-                style={styles.enterData}
-                placeholder="Логин или почтовый адрес"
-                onChangeText={handleChange('email')}
-                onBlur={handleBlur('login')}
-                value={values.email}
-              />
-              <TextInput
-                style={styles.enterData}
-                placeholder="Пароль"
+              <AppPapperInput
+                main
+                label="Пароль"
+                value={values.password}
                 onChangeText={handleChange('password')}
                 onBlur={handleBlur('password')}
-                value={values.password}
               />
-              <Text style={styles.forgotPassword}>Забыли пароль?</Text>
 
-              <View style={styles.viewButtons}>
-                <Button
+              <Block margin={[sizes.top, 0, 0]}>
+                <AppText>Забыли пароль?</AppText>
+              </Block>
+
+              <Block margin={[sizes.top, 0, 0]}>
+                <AppButton
+                  main
                   disabled={isDisabledSubmit}
-                  color={theme.colors.main}
                   onPress={handleSubmit}
                   accessibilityLabel="label"
-                  title="Продолжить"
                   //TODO ActivityIndicator with custom button
-                />
-              </View>
+                >
+                  <AppText white capitalize center disabled={isDisabledSubmit}>
+                    Продолжить
+                  </AppText>
+                </AppButton>
+              </Block>
 
-              <Separator />
+              <Block margin={[sizes.top, 0, 0]}>
+                <AppText center>ИЛИ</AppText>
+              </Block>
 
-              <Text style={{ textAlign: 'center' }}>ИЛИ</Text>
+              <Divider />
 
               <SocialLogin goToMainScreen={goToMainScreen} />
             </Block>
@@ -124,53 +132,9 @@ export default function LoginScreen({
         }}
       </Formik>
 
-      <Separator />
+      <Divider />
 
-      <Text style={styles.signUp}>Ещё нет аккаунта? Зарегистрироваться</Text>
+      <AppText center>Ещё нет аккаунта? Зарегистрироваться</AppText>
     </Block>
   );
 }
-
-const styles = StyleSheet.create({
-  root: {
-    //borderColor: 'red', borderWidth: 2,
-    flex: 1,
-    //alignItems: "center",
-    padding: '8%',
-  },
-  welcome: {
-    fontSize: 25,
-    textAlign: 'center',
-  },
-  enter: {
-    fontSize: 18,
-    textAlign: 'center',
-    paddingTop: '5%',
-  },
-  enterData: {
-    width: '100%',
-    marginTop: '5%',
-    fontSize: 18,
-    //borderColor: '#737373', borderWidth: StyleSheet.hairlineWidth, borderRadius: 5,
-    borderColor: 'grey',
-    borderWidth: 1,
-    borderRadius: 5,
-    color: 'grey',
-    padding: 10,
-  },
-  forgotPassword: {
-    //borderColor: 'brown', borderWidth: 1,
-    marginTop: '5%',
-    color: theme.colors.main,
-    alignSelf: 'flex-start',
-    fontSize: 18,
-  },
-  viewButtons: {
-    //borderColor: 'grey', borderWidth: 1,
-    marginVertical: '5%',
-  },
-  signUp: {
-    fontSize: 18,
-    textAlign: 'center',
-  },
-});

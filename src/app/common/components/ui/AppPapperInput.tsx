@@ -2,26 +2,16 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import {
   heightPercentageToDP as hp,
-  // widthPercentageToDP as wp,
+  widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
 import { TextInput } from 'react-native-paper';
 import { IUiInput } from '../../../models/ui';
 import { colors, sizes } from '../../constants';
 
 export function AppPapperInput(props: IUiInput) {
-  const {
-    // error,
-    // colors
-    main,
-    style,
-    ...otherProps
-  } = props;
+  const { main, style, ...otherProps } = props;
 
-  const inputStyles = [
-    styles.input,
-    //   error && { borderColor: colors.accent },
-    style,
-  ];
+  const inputStyles = [styles.input, style];
 
   const themeStyles = [main && { colors: { primary: colors.main } }];
   // const theme = Object.assign({}, ...themeStyles);
@@ -33,13 +23,6 @@ export function AppPapperInput(props: IUiInput) {
     <TextInput
       style={inputStyles}
       theme={theme}
-      // theme={{
-      //   // roundness: 50,
-      //   colors: {
-      //     primary: 'green',
-      //     // underlineColor: 'transparent',
-      //   },
-      // }}
       mode="outlined"
       {...otherProps}
     />
@@ -49,5 +32,6 @@ export function AppPapperInput(props: IUiInput) {
 const styles = StyleSheet.create({
   input: {
     height: hp(sizes.input),
+    marginTop: wp(sizes.top),
   },
 });

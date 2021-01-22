@@ -19,6 +19,8 @@ export function AppButton(props: any) {
     children,
     yellow,
     main,
+    // property of Button
+    disabled = false,
     ...other
   } = props;
 
@@ -30,6 +32,7 @@ export function AppButton(props: any) {
       !styles[color as keyof typeof styles] && { backgroundColor: color }, // custom backgroundColor
     yellow && styles.yellow,
     main && styles.main,
+    disabled && styles.disabled,
     style,
   ];
 
@@ -48,10 +51,16 @@ export function AppButton(props: any) {
     );
   }
 
+  // console.log('\n');
+  // console.log('[button/other]', other);
+  // console.log('[button/disabled]', disabled);
+  // console.log('[button/children]', children);
+
   return (
     <TouchableOpacity
+      disabled={disabled}
       style={buttonStyles}
-      activeOpacity={opacity || 0.8}
+      activeOpacity={disabled ? 1 : opacity || 0.8}
       {...other}>
       {children}
     </TouchableOpacity>
@@ -85,13 +94,11 @@ const styles = StyleSheet.create({
   accent: { backgroundColor: colors.warning },
   primary: { backgroundColor: colors.primary },
   secondary: { backgroundColor: colors.secondary },
-  // tertiary: { backgroundColor: colors.tertiary },
   main: { backgroundColor: colors.main },
   black: { backgroundColor: colors.black },
   white: { backgroundColor: colors.white },
   yellow: { backgroundColor: colors.yellow },
   gray: { backgroundColor: colors.gray },
   gray2: { backgroundColor: colors.gray2 },
-  // gray3: { backgroundColor: colors.gray3 },
-  // gray4: { backgroundColor: colors.gray4 },
+  disabled: { backgroundColor: colors.buttonGrey },
 });
