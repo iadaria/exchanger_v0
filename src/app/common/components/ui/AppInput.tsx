@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { StyleSheet, TextInput } from 'react-native';
+import { TextInput as PaperInput } from 'react-native-paper';
 import { Block } from './Block';
 import { AppText } from './AppText';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { colors, sizes } from '../../constants';
 import { AppButton } from './AppButton';
 import { IUiInput } from '../../../models/ui';
+import { color } from 'react-native-reanimated';
 
 export function AppInput(props: IUiInput) {
   const [toggleSecure, setToggleSecure] = useState(false);
@@ -64,7 +66,18 @@ export function AppInput(props: IUiInput) {
     );
   }
 
-  const { email, phone, number, secure, error, style, ...otherProps } = props;
+  const {
+    outlined,
+    email,
+    phone,
+    number,
+    secure,
+    error,
+    // colors
+    main,
+    style,
+    ...otherProps
+  } = props;
 
   const isSecure = toggleSecure ? false : secure;
 
@@ -74,6 +87,8 @@ export function AppInput(props: IUiInput) {
     style,
   ];
 
+  const inputPaperStyles = [main && { selectionColor: colors.main }, style];
+
   const inputType = email
     ? 'email-address'
     : number
@@ -81,6 +96,24 @@ export function AppInput(props: IUiInput) {
     : phone
     ? 'phone-pad'
     : 'default';
+
+  if (outlined) {
+    return (
+      <PaperInput
+        {...otherProps}
+        theme={{
+          roundness: 50,
+          colors: {
+            primary: 'green',
+            // underlineColor: 'transparent',
+          },
+        }}
+        selectionColor="blue"
+        underlineColor={colors.main}
+        mode="outlined"
+      />
+    );
+  }
 
   return (
     <Block flex={false} margin={[sizes.base, 0]}>

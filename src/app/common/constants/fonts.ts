@@ -29,4 +29,7 @@ export const fonts = {
   caption: {
     fontSize: wp(sizes.caption),
   },
+  big: {
+    fontSize: wp(sizes.big),
+  },
 };

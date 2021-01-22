@@ -7,7 +7,9 @@ import { defaultScreenOptions } from '../defaultThemes';
 export default function LoginNavigator(): JSX.Element {
   const Login = createStackNavigator();
   return (
-    <Login.Navigator screenOptions={defaultScreenOptions}>
+    <Login.Navigator
+      initialRouteName="Login"
+      screenOptions={defaultScreenOptions}>
       <Login.Screen name="Main" component={MainScreen} />
       <Login.Screen
         name="Login"

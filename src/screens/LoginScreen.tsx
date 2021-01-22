@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, TextInput, Button } from 'react-native';
+import { Block, AppText, AppPapperInput } from '../app/common/components/ui';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import Separator from '../app/common/components/ui/Separator';
@@ -25,7 +26,7 @@ export default function LoginScreen({
   const goToMainScreen = () => navigation.navigate('MainBottom');
 
   return (
-    <View style={styles.root}>
+    <Block safe base>
       <Formik
         initialValues={{
           email: '',
@@ -62,25 +63,29 @@ export default function LoginScreen({
         }) => {
           const isDisabledSubmit = !isValid || !dirty || isSubmitting;
           return (
-            <View>
-              <Text style={styles.welcome}>Добро пажаловать 🎉</Text>
-              <Text style={styles.enter}>
+            <Block debug>
+              <AppText big center>
+                Добро пажаловать 🎉
+              </AppText>
+              <AppText h3 center>
                 Введите данные для продолжения работы в iad
-              </Text>
+              </AppText>
 
               {errors.auth && (
-                <Text
-                  style={{
-                    color: 'red',
-                    borderWidth: 1,
-                    borderColor: 'red',
-                    borderRadius: 5,
-                  }}>
+                <AppText accent center>
                   {errors.auth}
                   {errors.email}
                   {errors.password}
-                </Text>
+                </AppText>
               )}
+
+              <AppPapperInput
+                outlined
+                main
+                label="Email"
+                value={values.email}
+                onChangeText={handleChange('email')}
+              />
 
               <TextInput
                 style={styles.enterData}
@@ -114,7 +119,7 @@ export default function LoginScreen({
               <Text style={{ textAlign: 'center' }}>ИЛИ</Text>
 
               <SocialLogin goToMainScreen={goToMainScreen} />
-            </View>
+            </Block>
           );
         }}
       </Formik>
@@ -122,7 +127,7 @@ export default function LoginScreen({
       <Separator />
 
       <Text style={styles.signUp}>Ещё нет аккаунта? Зарегистрироваться</Text>
-    </View>
+    </Block>
   );
 }
 

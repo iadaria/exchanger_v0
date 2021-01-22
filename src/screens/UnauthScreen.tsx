@@ -1,10 +1,8 @@
+import React from 'react';
 import { ParamListBase } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import React from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
 import { Block, AppText, AppButton } from '../app/common/components/ui';
 import { Padlock } from '../../assets';
-import { theme } from '../constants';
 import { sizes } from '../app/common/constants/sizes';
 
 export default function UnauthScreen({
@@ -38,20 +36,3 @@ export default function UnauthScreen({
     </Block>
   );
 }
-
-const styles = StyleSheet.create({
-  body: {
-    alignItems: 'center',
-  },
-  title: {
-    marginTop: 15,
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
-  text: {
-    marginTop: 15,
-    marginHorizontal: 15,
-    fontSize: 17,
-    textAlign: 'center',
-  },
-});
