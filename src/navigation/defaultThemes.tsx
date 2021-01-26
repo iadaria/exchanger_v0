@@ -2,17 +2,18 @@ import React from 'react';
 import { Linking } from 'react-native';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 import { AppHeaderIcon } from '../app/common/components/ui/AppHeaderIcon';
-import ErrorToast from '../app/common/components/AppToast';
 import { DefaultTheme } from '@react-navigation/native';
 import { StackNavigationOptions } from '@react-navigation/stack';
 import { colors } from '../app/common/constants/colors';
+import { vars } from '../app/common/constants/common';
+import { showMessage } from 'react-native-flash-message';
 
 export const defaultScreenOptions: StackNavigationOptions = {
   title: 'Бот-Гарант',
   headerStyle: {
     backgroundColor: colors.main,
-    borderWidth: 1,
-    borderColor: 'red',
+    // borderWidth: 1,
+    // borderColor: 'red',
   },
   headerTintColor: colors.white,
   headerTitleAlign: 'center',
@@ -31,7 +32,10 @@ export const defaultTabScreenOptions: StackNavigationOptions = {
         onPress={() => {
           Linking.openURL(`http://t.me/${vars.telgroup}`).catch((error) => {
             console.log('error when open telegram group', error);
-            ErrorToast(error.message);
+            showMessage({
+              message: `${error.message}`,
+              type: 'warning',
+            });
           });
         }}
       />
@@ -42,7 +46,12 @@ export const defaultTabScreenOptions: StackNavigationOptions = {
       <Item
         title="title"
         iconName="bell-outline"
-        onPress={() => console.log('message')}
+        onPress={() =>
+          showMessage({
+            message: 'test',
+            type: 'warning',
+          })
+        }
       />
     </HeaderButtons>
   ),

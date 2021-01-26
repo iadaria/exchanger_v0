@@ -2,7 +2,7 @@ import { ParamListBase } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import React from 'react';
 import { View, StyleSheet, Button } from 'react-native';
-import ErrorToast from '../app/common/components/AppToast';
+import { showMessage } from 'react-native-flash-message';
 import {
   signOutFirebase,
   signOutGoogle,
@@ -21,7 +21,10 @@ export default function PersonalCabinetScreen({
       navigation.navigate('LoginNavigator');
       await signOutGoogle();
     } catch (error) {
-      ErrorToast('test');
+      showMessage({
+        message: 'test',
+        type: 'warning',
+      });
       console.log('test toast');
     }
   }

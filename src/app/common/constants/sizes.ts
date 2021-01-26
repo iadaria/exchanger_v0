@@ -17,6 +17,7 @@ export const sizes = {
   border: 5,
 
   top: 3,
+  horizontal: 3.5,
 
   input: 6,
 };

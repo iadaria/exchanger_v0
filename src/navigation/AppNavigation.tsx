@@ -1,9 +1,10 @@
-import 'react-native-gesture-handler';
 import React from 'react';
+import 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import MainNavigator from './navigators/MainNavigator';
+import AppFlashMessage from '../app/common/components/AppFlashMessage';
 import { defaultTheme } from './defaultThemes';
 import { colors } from '../app/common/constants/colors';
 
@@ -16,6 +17,7 @@ export default function AppNavigation() {
       <NavigationContainer theme={defaultTheme}>
         <MainNavigator />
       </NavigationContainer>
+      <AppFlashMessage />
     </SafeAreaProvider>
   );
 }

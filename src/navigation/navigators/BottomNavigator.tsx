@@ -22,7 +22,6 @@ import { IRootState } from '../../app/store/rootReducer';
 import { colors } from '../../app/common/constants/colors';
 
 import { getColorText } from '../../app/common/utils/utils';
-import { AppTabBar } from '../../app/common/components/AppTabBar/AppTabBar';
 
 export default function BottomNavigator({ navigation }: any) {
   const appState = useRef(AppState.currentState);

@@ -6212,7 +6212,7 @@ prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.5.10, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -6332,6 +6332,14 @@ react-native-eject@^0.1.2:
   resolved "https://registry.yarnpkg.com/react-native-eject/-/react-native-eject-0.1.2.tgz#5824c332d092d845b1a77766c81023fa3c97bfd5"
   integrity sha512-ITuAYOLMOiSXNAjWeucQPm5i6VVweuh/Zo2gfMFSCf1DjVrdOocWwy2kkg65ypbbt26tW6Vd3ZrqNRCsC9rqDA==
 
+react-native-flash-message@^0.1.21:
+  version "0.1.21"
+  resolved "https://registry.yarnpkg.com/react-native-flash-message/-/react-native-flash-message-0.1.21.tgz#761fe7e01f31edf9c1717afc6bcbaa7a708f8aa0"
+  integrity sha512-mjfOJzJM44ZMXr1QBQ/w8daXwjl4sUIF5fJFbMPyy/dZdM3g40aU0PkA93VuGSDD8sIc720DHjZYoafnD833Mg==
+  dependencies:
+    prop-types "^15.7.2"
+    react-native-iphone-x-helper "^1.3.0"
+
 react-native-flipper@^0.34.0:
   version "0.34.0"
   resolved "https://registry.yarnpkg.com/react-native-flipper/-/react-native-flipper-0.34.0.tgz#7df1f38ba5d97a9321125fe0fccbe47d99e6fa1d"
@@ -6389,18 +6397,10 @@ react-native-responsive-screen@^1.4.2:
   resolved "https://registry.yarnpkg.com/react-native-responsive-screen/-/react-native-responsive-screen-1.4.2.tgz#45280826d24f9accbfdf46a36cb8e6d780f76f28"
   integrity sha512-BLYz0UUpeohrib7jbz6wDmtBD5OmiuMRko4IT8kIF63taXPod/c5iZgmWnr5qOnK8hMuKiGMvsM3sC+eHX/lEQ==
 
-react-native-root-siblings@^4.0.0, react-native-root-siblings@^4.0.6:
+react-native-root-siblings@^4.0.6:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/react-native-root-siblings/-/react-native-root-siblings-4.1.0.tgz#23305a0f96ebd27cff3667d1cb980684da35e5d1"
   integrity sha512-KgkciaZYSUQrPOFOLlFXJCtY54r7BMhFXa+P58xrZZuWFcMWiIB1QCRO48DQSKi1EEsRj5cw5Gan961zUC4jng==
-
-react-native-root-toast@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/react-native-root-toast/-/react-native-root-toast-3.2.1.tgz#f456d029f5c5b76e4b686334f25371465478a3be"
-  integrity sha512-BNf6LKMqcIAonKgqCGQWk+1lduFqSjPYbEF0FygMZbXhODRTvrGUAvAgV6kfamVPOkKHUkPU7dnnvmgEQ8ZDzQ==
-  dependencies:
-    prop-types "^15.5.10"
-    react-native-root-siblings "^4.0.0"
 
 react-native-safe-area-context@^3.1.9:
   version "3.1.9"

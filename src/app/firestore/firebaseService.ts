@@ -2,9 +2,9 @@ import firebase from '../config/firebase'; // It's for Web
 //import auth from '@react-native-firebase/auth'; // For RN
 import { setUserProfileData } from './firestoreService';
 import { GoogleSignin } from '@react-native-community/google-signin';
-import ErrorToast from '../common/components/AppToast';
 import { getColorText } from '../common/utils/utils';
 import AsyncStorage from '@react-native-community/async-storage';
+import { showMessage } from 'react-native-flash-message';
 // import { FirebaseDatabaseTypes } from '@react-native-firebase/database';
 // import { FirebaseAuthTypes } from '@react-native-firebase/auth';
 
@@ -74,7 +74,10 @@ export async function socialLogin(selectedProvider: string) {
     }
   } catch (error) {
     console.log(error); //error.message for toast
-    ErrorToast(error.message);
+    showMessage({
+      message: `${error.message}`,
+      type: 'warning',
+    });
   }
 }
 
