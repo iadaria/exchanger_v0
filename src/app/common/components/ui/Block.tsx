@@ -130,6 +130,10 @@ export function Block(props: IUiBlock) {
     animated,
     wrap,
     main,
+    // colors
+    gray,
+    section,
+    // others
     style,
     children,
     ...otherProps
@@ -157,6 +161,8 @@ export function Block(props: IUiBlock) {
     space && { justifyContent: `space-${space}` },
     wrap && { flexWrap: 'wrap' },
     // colors
+    gray && styles.gray,
+    section && styles.section,
     color && styles[color as keyof typeof styles], // predefined styles for backgroundColor
     main && styles.main,
     // others
@@ -201,7 +207,7 @@ export const styles = StyleSheet.create<IBlockStyleProps>({
     flexDirection: 'column',
   },
   card: {
-    borderRadius: sizes.radius,
+    borderRadius: wp(sizes.radius),
   },
   center: {
     alignItems: 'center',
@@ -228,6 +234,15 @@ export const styles = StyleSheet.create<IBlockStyleProps>({
     shadowRadius: 13,
     elevation: 2,
   },
+  // custome styles
+  section: {
+    backgroundColor: colors.section,
+    marginTop: wp(0.2),
+    padding: wp(sizes.padding),
+    justifyContent: 'space-between',
+  },
+
+  // colors
   accent: { backgroundColor: colors.accent },
   primary: { backgroundColor: colors.primary },
   secondary: { backgroundColor: colors.secondary },
@@ -242,5 +257,4 @@ export const styles = StyleSheet.create<IBlockStyleProps>({
   orange: { backgroundColor: colors.orange },
   suborange: { backgroundColor: colors.suborange },
   pink: { backgroundColor: colors.pink },
-  section: { backgroundColor: colors.section },
 });

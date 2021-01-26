@@ -1,5 +1,5 @@
 import { IAction } from '../../app/models/common';
-import { DefaultUserValues, IUser } from '../../app/models/IUser';
+import { DefaultUserValues, IUser } from '../../app/models/user';
 import { SIGN_IN_USER, SIGN_OUT_USER } from './authConstants';
 
 export interface IAuthState {

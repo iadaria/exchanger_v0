@@ -6,7 +6,7 @@ export interface IUiBlock {
   debug?: boolean;
   content?: boolean;
   base?: boolean;
-  row?: string;
+  row?: boolean;
   column?: string;
   center?: boolean;
   middle?: boolean;
@@ -14,7 +14,7 @@ export interface IUiBlock {
   right?: string;
   top?: string;
   bottom?: string;
-  card?: number;
+  card?: boolean;
   shadow?: boolean;
   color?: string;
   space?: string;

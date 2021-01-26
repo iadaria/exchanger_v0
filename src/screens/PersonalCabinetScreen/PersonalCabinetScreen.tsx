@@ -6,11 +6,11 @@ import { showMessage } from 'react-native-flash-message';
 import {
   signOutFirebase,
   signOutGoogle,
-} from '../app/firestore/firebaseService';
-import { theme } from '../constants';
-import ProfileContent from '../features/profiles/ProfileContent';
+} from '../../app/firestore/firebaseService';
+import { theme } from '../../constants';
+import ProfileContent from '../../features/profiles/ProfileContent';
 
-export default function PersonalCabinetScreen({
+export function PersonalCabinetScreen({
   navigation,
 }: {
   navigation: StackNavigationProp<ParamListBase>;

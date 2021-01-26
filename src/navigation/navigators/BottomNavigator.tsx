@@ -29,9 +29,7 @@ export default function BottomNavigator({ navigation }: any) {
   const { authenticated, currentUser } = useSelector<IRootState>(
     (state) => state.auth,
   ) as IAuthState;
-  const [initialRoute, setInitialRoute] = useState<string>(
-    'TabPersonalCabinet',
-  );
+  const [initialRoute, setInitialRoute] = useState<string>('ProfileScreen');
   const [loading, setLoading] = useState<boolean>(true);
   console.info('[BottomNavigator/fun] authenticated is', authenticated);
 
@@ -236,7 +234,7 @@ export default function BottomNavigator({ navigation }: any) {
         }}
       />
       <Tab.Screen
-        name="PersonalCabinetTab"
+        name="ProfileTab"
         component={authenticated ? PersonalCabinetNavigator : UnauthNavigator}
         options={{
           tabBarIcon: ({ color }) => (

@@ -1,6 +1,6 @@
 import { IAction } from '../../app/models/common';
 import { IProfile } from '../../app/models/IProfile';
-import { DefaultUserValues } from '../../app/models/IUser';
+import { DefaultUserValues } from '../../app/models/user';
 import { LISTEN_TO_CURRENT_USER_PROFILE } from './profileConstants';
 
 export interface IProfileState {

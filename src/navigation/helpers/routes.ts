@@ -11,6 +11,9 @@ export default {
     DealsTab: 'DealsTab',
     TradeListTab: 'TradeListTab',
     PersonalAdsTab: 'PersonalAdsTab',
-    PersonalCabinetTab: 'PersonalCabinetTab',
+    ProfileTab: 'ProfileTab',
+  },
+  profileTab: {
+    ProfileScreen: 'ProfileScreen',
   },
 };

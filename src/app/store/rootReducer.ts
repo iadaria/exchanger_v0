@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import asyncReducer from '../../features/async/asyncReducer';
+import asyncReducer, { IAsyncState } from '../../features/async/asyncReducer';
 import authReducer, { IAuthState } from '../../features/auth/authReducer';
 import profileReducer, {
   IProfileState,
@@ -10,6 +10,7 @@ export interface IRootState {
   auth: IAuthState;
   profile: IProfileState;
   modal: IModalState;
+  async: IAsyncState;
 }
 
 const rootReducer = combineReducers({

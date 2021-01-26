@@ -19,5 +19,7 @@ export const sizes = {
   top: 3,
   horizontal: 3.5,
 
+  between: 1.8,
+
   input: 6,
 };
