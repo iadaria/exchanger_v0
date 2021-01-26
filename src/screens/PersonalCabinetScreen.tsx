@@ -18,7 +18,7 @@ export default function PersonalCabinetScreen({
   async function handleSignOut() {
     try {
       await signOutFirebase();
-      navigation.navigate('MainLogin');
+      navigation.navigate('LoginNavigator');
       await signOutGoogle();
     } catch (error) {
       ErrorToast('test');

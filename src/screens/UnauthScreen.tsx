@@ -27,7 +27,7 @@ export default function UnauthScreen({
       </Block>
 
       <Block margin={[sizes.top, 0, 0]}>
-        <AppButton yellow onPress={() => navigation.navigate('Main')}>
+        <AppButton yellow onPress={() => navigation.navigate('LoginNavigator')}>
           <AppText center h3 white capitalize>
             Авторизироваться
           </AppText>

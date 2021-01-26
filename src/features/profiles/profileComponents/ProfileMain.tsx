@@ -4,7 +4,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import SectionTitle from '../../../app/common/components/ui/SectionTitle';
 import SectionTextRow from '../../../app/common/components/ui/SectionTextRow';
-import AppText from '../../../app/common/components/ui/AppText';
+import { AppText } from '../../../app/common/components/ui/AppText';
 import { theme } from '../../../constants';
 
 export default function ProfileMain({ profile }: any) {

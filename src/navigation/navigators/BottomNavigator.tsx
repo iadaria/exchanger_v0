@@ -10,7 +10,6 @@ import {
   updateUserAppState,
 } from '../../app/firestore/firebaseService';
 import firebase from '../../app/config/firebase';
-import { getColorText } from '../../app/common/utils/utils';
 
 import messaging from '@react-native-firebase/messaging';
 import { FirebaseDatabaseTypes } from '@react-native-firebase/database';
@@ -20,8 +19,9 @@ import TradeListNavigator from './TradeListNavigator';
 import PersonalAdsNavigator from './PersonalAdsNavigator';
 import PersonalCabinetNavigator from './PersonalCabinetNavigator';
 import { IRootState } from '../../app/store/rootReducer';
-import { IAuthState } from '../../features/auth/authReducer';
-import { theme } from '../../constants';
+import { colors } from '../../app/common/constants/colors';
+
+import { getColorText } from '../../app/common/utils/utils';
 
 export default function BottomNavigator({ navigation }: any) {
   const appState = useRef(AppState.currentState);
@@ -29,7 +29,9 @@ export default function BottomNavigator({ navigation }: any) {
   const { authenticated, currentUser } = useSelector<IRootState>(
     (state) => state.auth,
   ) as IAuthState;
-  const [initialRoute, setInitialRoute] = useState<string>('TabPersonalAds');
+  const [initialRoute, setInitialRoute] = useState<string>(
+    'TabPersonalCabinet',
+  );
   const [loading, setLoading] = useState<boolean>(true);
   console.info('[BottomNavigator/fun] authenticated is', authenticated);
 
@@ -190,10 +192,11 @@ export default function BottomNavigator({ navigation }: any) {
     <Tab.Navigator
       initialRouteName={initialRoute}
       tabBarOptions={{
-        activeTintColor: theme.colors.white,
+        activeTintColor: colors.white,
+        inactiveTintColor: colors.bottomTabs,
         showLabel: false,
         style: {
-          backgroundColor: theme.colors.main,
+          backgroundColor: colors.main,
         },
       }}>
       <Tab.Screen

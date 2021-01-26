@@ -11,7 +11,7 @@ export default function UnauthNavigator() {
       <Unauth.Screen
         options={{ headerShown: false }}
         // options={defaultTabScreenOptions}
-        name="Unauth"
+        name="UnauthScreen"
         component={UnauthScreen}
       />
     </Unauth.Navigator>

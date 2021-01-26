@@ -29,7 +29,7 @@ export default function MainScreen({
         </AppText>
       </Block>
 
-      <AppButton yellow onPress={() => navigation.navigate('Login')}>
+      <AppButton yellow onPress={() => navigation.navigate('LoginScreen')}>
         <AppText center h3 white capitalize>
           Авторизируйтесь
         </AppText>

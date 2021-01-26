@@ -8,11 +8,11 @@ export default function LoginNavigator(): JSX.Element {
   const Login = createStackNavigator();
   return (
     <Login.Navigator
-      initialRouteName="Login"
+      // initialRouteName="LoginScreen"
       screenOptions={defaultScreenOptions}>
-      <Login.Screen name="Main" component={MainScreen} />
+      <Login.Screen name="MainScreen" component={MainScreen} />
       <Login.Screen
-        name="Login"
+        name="LoginScreen"
         // options={defaultScreenOptions}
         component={LoginScreen}
       />
