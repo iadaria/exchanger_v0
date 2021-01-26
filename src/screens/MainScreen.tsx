@@ -35,7 +35,10 @@ export default function MainScreen({
         </AppText>
       </AppButton>
 
-      <AppButton main shadow onPress={() => navigation.navigate('MainBottom')}>
+      <AppButton
+        main
+        shadow
+        onPress={() => navigation.navigate('MainNavigator')}>
         <AppText center h3 white capitalize>
           Далее
         </AppText>

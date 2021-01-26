@@ -27,7 +27,7 @@ export default function LoginScreen({
 }: {
   navigation: StackNavigationProp<ParamListBase>;
 }) {
-  const goToMainScreen = () => navigation.navigate('MainBottom');
+  const goToMainScreen = () => navigation.navigate('MainNavigator');
 
   return (
     <Block safe base full>

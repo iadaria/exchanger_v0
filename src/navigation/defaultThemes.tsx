@@ -2,7 +2,7 @@ import React from 'react';
 import { Linking } from 'react-native';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 import { AppHeaderIcon } from '../app/common/components/ui/AppHeaderIcon';
-import { DefaultTheme } from '@react-navigation/native';
+import { DefaultTheme, Theme } from '@react-navigation/native';
 import { StackNavigationOptions } from '@react-navigation/stack';
 import { colors } from '../app/common/constants/colors';
 import { vars } from '../app/common/constants/common';
@@ -57,7 +57,7 @@ export const defaultTabScreenOptions: StackNavigationOptions = {
   ),
 };
 
-export const defaultTheme = {
+export const defaultTheme: Theme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme,

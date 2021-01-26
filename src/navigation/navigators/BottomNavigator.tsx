@@ -201,7 +201,7 @@ export default function BottomNavigator({ navigation }: any) {
         },
       }}>
       <Tab.Screen
-        name="TabDeals"
+        name="DealsTab"
         component={authenticated ? DealsNavigator : UnauthNavigator}
         options={{
           tabBarIcon: ({ color }) => (
@@ -210,7 +210,7 @@ export default function BottomNavigator({ navigation }: any) {
         }}
       />
       <Tab.Screen
-        name="TabTradeList"
+        name="TradeListTab"
         component={TradeListNavigator}
         options={{
           tabBarIcon: ({ color }) => (
@@ -223,7 +223,7 @@ export default function BottomNavigator({ navigation }: any) {
         }}
       />
       <Tab.Screen
-        name="TabPersonalAds"
+        name="PersonalAdsTab"
         component={authenticated ? PersonalAdsNavigator : UnauthNavigator}
         options={{
           tabBarIcon: ({ color }) => (
@@ -236,7 +236,7 @@ export default function BottomNavigator({ navigation }: any) {
         }}
       />
       <Tab.Screen
-        name="TabPersonalCabinet"
+        name="PersonalCabinetTab"
         component={authenticated ? PersonalCabinetNavigator : UnauthNavigator}
         options={{
           tabBarIcon: ({ color }) => (

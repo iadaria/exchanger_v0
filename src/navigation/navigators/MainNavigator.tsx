@@ -18,7 +18,7 @@ export default function MainNavigator(): JSX.Element {
   const Main = createStackNavigator();
   return (
     <Main.Navigator
-      initialRouteName={authenticated ? 'MainBottom' : 'LoginNavigator'}>
+      initialRouteName={authenticated ? 'MainNavigator' : 'LoginNavigator'}>
       <Main.Screen
         options={{ headerShown: false }}
         // options={defaultScreenOptions}
@@ -27,7 +27,7 @@ export default function MainNavigator(): JSX.Element {
       />
       <Main.Screen
         options={defaultTabScreenOptions}
-        name="MainBottom"
+        name="MainNavigator"
         component={BottomNavigator}
       />
     </Main.Navigator>
