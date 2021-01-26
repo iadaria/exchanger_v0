@@ -5,7 +5,7 @@ import PersonalAdsScreen from '../../screens/PersonalAdsScreen';
 export default function PersonalAdsNavigator(): JSX.Element {
   const PersonalAds = createStackNavigator();
   return (
-    <PersonalAds.Navigator>
+    <PersonalAds.Navigator screenOptions={{ headerShown: false }}>
       <PersonalAds.Screen name="PersonalAds" component={PersonalAdsScreen} />
     </PersonalAds.Navigator>
   );

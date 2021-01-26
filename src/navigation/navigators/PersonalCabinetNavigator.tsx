@@ -5,7 +5,7 @@ import PersonalCabinetScreen from '../../screens/PersonalCabinetScreen';
 export default function PersonalCabinetNavigator(): JSX.Element {
   const PersonalCabinet = createStackNavigator();
   return (
-    <PersonalCabinet.Navigator>
+    <PersonalCabinet.Navigator screenOptions={{ headerShown: false }}>
       <PersonalCabinet.Screen
         name="PersonalCabinet"
         component={PersonalCabinetScreen}

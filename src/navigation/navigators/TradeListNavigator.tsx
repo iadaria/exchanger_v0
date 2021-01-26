@@ -5,7 +5,7 @@ import TradeListScreen from '../../screens/TradeListScreen';
 export default function TradeListNavigator() {
   const TradeList = createStackNavigator();
   return (
-    <TradeList.Navigator>
+    <TradeList.Navigator screenOptions={{ headerShown: false }}>
       <TradeList.Screen name="TradeList" component={TradeListScreen} />
     </TradeList.Navigator>
   );
