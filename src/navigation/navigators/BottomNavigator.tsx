@@ -17,7 +17,7 @@ import DealsNavigator from './DealsNavigators';
 import UnauthNavigator from './UnauthNavigator';
 import TradeListNavigator from './TradeListNavigator';
 import PersonalAdsNavigator from './PersonalAdsNavigator';
-import PersonalCabinetNavigator from './PersonalCabinetNavigator';
+import ProfileNavigator from './ProfileNavigator';
 import { IRootState } from '../../app/store/rootReducer';
 import { colors } from '../../app/common/constants/colors';
 
@@ -128,9 +128,9 @@ export default function BottomNavigator({ navigation }: any) {
             .update(isOfflineForDatabase)
             .then(async () => {
               getUserUidRef()?.update(isOnlineForDatabase);
-              await httpService.sendMessageToTelegramBot(
-                `[.info/connected] user ${currentUser!.displayName} online`,
-              );
+              // await httpService.sendMessageToTelegramBot(
+              //   `[.info/connected] user ${currentUser!.displayName} online`,
+              // );
             });
         },
       );
@@ -235,7 +235,7 @@ export default function BottomNavigator({ navigation }: any) {
       />
       <Tab.Screen
         name="ProfileTab"
-        component={authenticated ? PersonalCabinetNavigator : UnauthNavigator}
+        component={authenticated ? ProfileNavigator : UnauthNavigator}
         options={{
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="account" color={color} size={27} />

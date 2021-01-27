@@ -7,6 +7,12 @@ export default {
     MainScreen: 'MainScreen',
     LoginScreen: 'LoginScreen',
   },
+  mainBottom: {
+    DealsTab: 'DealsTab',
+    TradeListTab: 'TradeListTab',
+    PersonalAdsTab: 'PersonalAdsTab',
+    ProfileTab: 'ProfileTab',
+  },
   bottomTabs: {
     DealsTab: 'DealsTab',
     TradeListTab: 'TradeListTab',

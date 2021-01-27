@@ -1,11 +1,15 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { TouchableHighlight } from 'react-native';
-import { AppText, Block } from '../../../../app/common/components/ui';
+import { AppText, Block } from '../../../../../app/common/components/ui';
+import { openModal } from '../../../../../app/common/modals/modalReducer';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
-import { sizes, colors } from '../../../../app/common/constants';
+import { sizes, colors } from '../../../../../app/common/constants';
 
 export default function ProfileForm({ profile }: any) {
+  const dispatch = useDispatch();
+  
   return (
     <>
       <Block mar margin={[sizes.top, 0]}>
@@ -22,7 +26,7 @@ export default function ProfileForm({ profile }: any) {
           <Block margin={[0, sizes.between, 0]} />
 
           <TouchableHighlight
-            onPress={() => console.log('Changing')}
+            onPress={() => dispatch(openModal({ modalType: 'UsernameForm' }))}
             underlayColor={colors.section}>
             <MaterialCommunityIcons
               size={25}

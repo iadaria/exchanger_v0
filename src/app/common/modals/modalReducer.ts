@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { IAction } from '../../models/common';
 
 /****************** CONST ***********************/
@@ -19,12 +20,21 @@ export function closeModal() {
 }
 
 /***************** Reducer ********************/
+
+/**
+ *
+ * Interface of Modal State
+ *
+ * @param modalType A string name of modal window
+ * @param modalProps A object props of modal window
+ */
 export interface IModalState {
   modalType?: string | null;
-  modalProps?: object | null;
+  // modalProps?: object | null;
+  modalProps?: ReactNode | null;
 }
 
-const initialState: IModalState = {};
+const initialState: IModalState | null = null;
 
 /* const initialState: IModalState = {
     modalType: null,
@@ -32,16 +42,16 @@ const initialState: IModalState = {};
 }; */
 
 export default function modalReducer(
-  state: IModalState = initialState,
+  state: IModalState | null = initialState,
   { type, payload }: IAction = { type: '', payload: undefined },
-): IModalState {
+): IModalState | null {
   switch (type) {
     case OPEN_MODAL:
       const { modalType, modalProps } = payload;
       return { modalType, modalProps };
 
     case CLOSE_MODAL:
-      return {};
+      return null;
 
     default:
       return state;

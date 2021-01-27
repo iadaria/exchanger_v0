@@ -1,19 +1,18 @@
+import React from 'react';
 import { ParamListBase } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import React from 'react';
 import { View, StyleSheet, Button } from 'react-native';
-
 import { showMessage } from 'react-native-flash-message';
 import {
   signOutFirebase,
   signOutGoogle,
-} from '../../../app/firestore/firebaseService';
-import { colors } from '../../../app/common/constants/colors';
+} from '../../../../app/firestore/firebaseService';
+import { colors } from '../../../../app/common/constants/colors';
 import ProfileForm from './ProfileForm';
 import { useSelector } from 'react-redux';
-import { IRootState } from '../../../app/store/rootReducer';
-import { IProfileState } from '../profileReducer';
-import { IAsyncState } from '../../async/asyncReducer';
+import { IRootState } from '../../../../app/store/rootReducer';
+import { IProfileState } from '../../profileReducer';
+import { IAsyncState } from '../../../async/asyncReducer';
 
 export function ProfileScreen({
   navigation,

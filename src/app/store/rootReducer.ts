@@ -4,19 +4,20 @@ import authReducer, { IAuthState } from '../../features/auth/authReducer';
 import profileReducer, {
   IProfileState,
 } from '../../features/profiles/profileReducer';
-import { IModalState } from '../common/modals/modalReducer';
+import modalReducer, { IModalState } from '../common/modals/modalReducer';
 
 export interface IRootState {
+  async: IAsyncState;
   auth: IAuthState;
   profile: IProfileState;
-  modal: IModalState;
-  async: IAsyncState;
+  modals: IModalState;
 }
 
 const rootReducer = combineReducers({
-  auth: authReducer,
   async: asyncReducer,
+  auth: authReducer,
   profile: profileReducer,
+  modals: modalReducer,
 });
 
 export default rootReducer;
